@@ -61,7 +61,13 @@ export default function ContactMe() {
     }
 
     const handleEmail = (e) => {
+        e.preventDefault()
         sendEmail()
+        setValues({
+            name: '',
+            email: '',
+            message: ''
+        })
     }
 
     return (
