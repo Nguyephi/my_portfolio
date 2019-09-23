@@ -52,7 +52,7 @@ export default function FeaturedProjects() {
                                 />
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="h2">
-                                        Cookthis
+                                        Cook this
                                     </Typography>
                                     <Typography variant="body2" color="textSecondary" component="p">
                                         A project that models after instagram, but for foodies. This project uses react for the front-end and python for the backend.
@@ -100,6 +100,6 @@ export default function FeaturedProjects() {
                     </div>
                 </Col>
             </Row>
-        </div >
+        </div>
     )
 }

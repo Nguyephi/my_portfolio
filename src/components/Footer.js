@@ -20,7 +20,7 @@ export default function ButtonAppBar() {
         window.open('https://github.com/Nguyephi', '_blank')
     }
     const handleFacebook = () => {
-        window.open('https://github.com/Nguyephi', '_blank')
+        window.open('https://www.facebook.com/isteelyphil', '_blank')
     }
     const handleInstagram = () => {
         window.open('https://www.instagram.com/__phil__nguyen__/', '_blank')

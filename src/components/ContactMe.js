@@ -4,7 +4,14 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import '../App.css'
 
-const API = process.env.REACT_APP_API
+let API;
+if (process.env.NODE_ENV === 'production') {
+    console.log('production');
+} else {
+    console.log('development')
+    API = process.env.REACT_APP_API
+}
+console.log(API);
 
 
 const useStyles = makeStyles(theme => ({
