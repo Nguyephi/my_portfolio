@@ -7,11 +7,12 @@ import '../App.css'
 let API;
 if (process.env.NODE_ENV === 'production') {
     console.log('production');
+    API = process.env.REACT_APP_API_PROD
 } else {
     console.log('development')
     API = process.env.REACT_APP_API
 }
-console.log(API);
+console.log('helloooooo', API);
 
 
 const useStyles = makeStyles(theme => ({
