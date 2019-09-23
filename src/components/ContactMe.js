@@ -4,15 +4,12 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import '../App.css'
 
-let API;
+let API_KEY;
 if (process.env.NODE_ENV === 'production') {
-    console.log('production');
-    API = process.env.REACT_APP_API_PROD
+    API_KEY = process.env.REACT_APP_API_PROD
 } else {
-    console.log('development')
-    API = process.env.REACT_APP_API
+    API_KEY = process.env.REACT_APP_API
 }
-console.log('helloooooo', API);
 
 
 const useStyles = makeStyles(theme => ({
@@ -50,7 +47,7 @@ export default function ContactMe() {
     };
 
     const sendEmail = async () => {
-        await fetch(`${API}/sendemail`, {
+        await fetch(`${API_KEY}/sendemail`, {
             headers: new Headers({
                 'Content-Type': 'application/json',
             }),
