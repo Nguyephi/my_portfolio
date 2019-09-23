@@ -4,6 +4,9 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import '../App.css'
 
+const API = process.env.REACT_APP_API
+
+
 const useStyles = makeStyles(theme => ({
     container: {
         display: 'flex',
@@ -37,7 +40,24 @@ export default function ContactMe() {
     const handleChange = name => event => {
         setValues({ ...values, [name]: event.target.value });
     };
-    console.log(values);
+
+    const sendEmail = async () => {
+        await fetch(`${API}/sendemail`, {
+            headers: new Headers({
+                'Content-Type': 'application/json',
+            }),
+            method: 'POST',
+            body: JSON.stringify({
+                'name': values.name,
+                'email': values.email,
+                'message': values.message
+            })
+        })
+    }
+
+    const handleEmail = (e) => {
+        sendEmail()
+    }
 
     return (
         <>
@@ -61,7 +81,7 @@ export default function ContactMe() {
                             />
                             <TextField
                                 id="outlined-name"
-                                label="Email"
+                                label="Email address"
                                 className={classes.textField}
                                 value={values.email}
                                 onChange={handleChange('email')}
@@ -72,16 +92,16 @@ export default function ContactMe() {
                                 id="outlined-multiline-static"
                                 label="Message"
                                 multiline
-                                rows="4"
+                                rows="6"
                                 defaultValue={values.message}
                                 onChange={handleChange('message')}
                                 className={classes.textField}
                                 margin="normal"
                                 variant="outlined"
                             />
-                            <Button color="primary" className={classes.button}>
+                            <Button type='submit' onClick={(e) => handleEmail(e)} color="primary" className={classes.button}>
                                 Send Email
-                        </Button>
+                            </Button>
                         </form>
                     </div>
                 </div>

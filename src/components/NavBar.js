@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
 
 const avatar = require('../img/phils-avatar.jpg');
 
@@ -23,11 +24,19 @@ export default function BackToTop(props) {
     return (
         <>
             <AppBar style={{ backgroundColor: '#0D1B2A' }}>
-                <Toolbar className='container'>
-                    <Grid>
-                        <Avatar alt="Philip Nguyen" src={avatar} className={classes.bigAvatar} />
-                    </Grid>
-                    <Typography variant="h5">Philip Nguyen</Typography>
+                <Toolbar className='container d-flex justify-content-between'>
+                    <div className="d-flex align-items-center">
+                        <Grid>
+                            <Avatar alt="Philip Nguyen" src={avatar} className={classes.bigAvatar} />
+                        </Grid>
+                        <Typography variant="h5">Philip Nguyen</Typography>
+                    </div>
+                    <div>
+                        <Button href='#featured-projects' color="inherit">Featured Projects</Button>
+                        {/* <Button color="inherit">Resume</Button> */}
+                        |
+                        <Button href='#contact-me' color="inherit">Contact me</Button>
+                    </div>
                 </Toolbar>
             </AppBar>
             <Toolbar id="back-to-top-anchor" />

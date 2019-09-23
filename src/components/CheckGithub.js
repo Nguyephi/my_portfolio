@@ -4,7 +4,7 @@ import { Row, Col } from 'react-bootstrap'
 export default function checkGithub() {
 
     const handlePageToGithub = () => {
-        window.location.assign('https://github.com/Nguyephi?tab=repositories')
+        window.open('https://github.com/Nguyephi?tab=repositories', '_blank')
     }
 
     return (

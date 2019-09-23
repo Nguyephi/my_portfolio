@@ -9,58 +9,75 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
+const CookthisDemo = require('../img/CookthisDemo.gif')
+const PhilsMoviesDemo = require('../img/PhilsMoviesDemo.gif')
+
 const useStyles = makeStyles({
     card: {
         maxWidth: 345,
     },
     media: {
-        height: 140,
+        height: 170,
     },
 });
 
 export default function FeaturedProjects() {
     const classes = useStyles()
+
+    const handleCookthisLive = () => {
+        window.open('https://cookthis.netlify.com', '_blank')
+    }
+    const handleCookthisRepo = () => {
+        window.open('https://github.com/Nguyephi/Cook-this-app', '_blank')
+    }
+    const handlePhilsMoviesLive = () => {
+        window.open('https://phils-movies.netlify.com/', '_blank')
+    }
+    const handlePhilsMoviesRepo = () => {
+        window.open('https://github.com/Nguyephi/movie-app2', '_blank')
+    }
+
     return (
-        <div style={{ marginTop: 70 }}>
+        <div className='container' style={{ marginTop: 70 }}>
             <h2 className='text-center mb-5'>FEATURED PROJECTS</h2>
-            <Row className='mb-5'>
-                <Col style={{ display: 'flex', justifyContent: 'center' }}>
+            <Row className='project-cards'>
+                <Col className='mb-5' style={{ display: ' flex', justifyContent: 'center' }}>
                     <div data-aos="flip-right">
                         <Card className={classes.card}>
-                            <CardActionArea>
+                            <CardActionArea onClick={handleCookthisLive}>
                                 <CardMedia
                                     className={classes.media}
-                                    image="/static/images/cards/contemplative-reptile.jpg"
-                                    title="Contemplative Reptile"
+                                    image={CookthisDemo}
+                                    title="CookthisDemo.gif"
                                 />
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="h2">
                                         Cookthis
                                     </Typography>
                                     <Typography variant="body2" color="textSecondary" component="p">
-                                        This project I worked on is a basic replica of instagram, but for foodies. This project uses react for the front-end and python for the backend.
+                                        A project that models after instagram, but for foodies. This project uses react for the front-end and python for the backend.
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>
-                                <Button size="small" color="primary">
+                                <Button onClick={handleCookthisLive} size="small" color="primary">
                                     Live
                                 </Button>
-                                <Button size="small" color="primary">
+                                <Button onClick={handleCookthisRepo} size="small" color="primary">
                                     Repo
                                 </Button>
                             </CardActions>
                         </Card>
                     </div>
                 </Col>
-                <Col style={{ display: 'flex', justifyContent: 'center' }}>
+                <Col className='mb-5' style={{ display: 'flex', justifyContent: 'center' }}>
                     <div data-aos="flip-left">
                         <Card className={classes.card}>
-                            <CardActionArea>
+                            <CardActionArea onClick={handlePhilsMoviesLive}>
                                 <CardMedia
                                     className={classes.media}
-                                    image="/static/images/cards/contemplative-reptile.jpg"
-                                    title="Contemplative Reptile"
+                                    image={PhilsMoviesDemo}
+                                    title="PhilsMoviesDemo.gif"
                                 />
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="h2">
@@ -72,10 +89,10 @@ export default function FeaturedProjects() {
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>
-                                <Button size="small" color="primary">
+                                <Button onClick={handlePhilsMoviesLive} size="small" color="primary">
                                     Live
                                 </Button>
-                                <Button size="small" color="primary">
+                                <Button onClick={handlePhilsMoviesRepo} size="small" color="primary">
                                     Repo
                                 </Button>
                             </CardActions>
@@ -83,6 +100,6 @@ export default function FeaturedProjects() {
                     </div>
                 </Col>
             </Row>
-        </div>
+        </div >
     )
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Row, Col } from 'react-bootstrap'
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import '../App.css'
@@ -6,14 +6,7 @@ import '../App.css'
 const headerBackground = require('../img/header-background.png');
 const headerFullBackground = require('../img/header-full-background.jpg');
 
-export default function Header({ setOpen }) {
-
-
-    const handleOpen = () => {
-        setOpen(true);
-    };
-
-
+export default function Header() {
     return (
         <div id='header-background' style={{
             display: 'flex',
@@ -38,8 +31,8 @@ export default function Header({ setOpen }) {
                         <div id="header" style={{ width: '30rem', textAlign: 'center' }}>
                             <h1 style={{ color: 'white' }}>PHILIP NGUYEN</h1>
                             <h4 style={{ color: 'white' }}>FULL-STACK WEB DEVELOPER</h4>
-                            <a id='CV-btn' type="button" onClick={handleOpen}>
-                                My Curriculum Vitae <ArrowForwardIosIcon />
+                            <a id='CV-btn' href='https://docs.google.com/document/d/1ujAfq2jgFEdaNYcuaigo72so4c4lT6IJQm5wQjKof7A/edit' target="_blank">
+                                My Curriculum Vitae <i class="pl-2 fas fa-arrow-circle-right"></i>
                             </a>
                         </div>
                     </div>

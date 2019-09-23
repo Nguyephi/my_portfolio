@@ -1,3 +1,16 @@
+#featured-projects::before {
+  content:"";
+  display:block;
+  height:35px; /* fixed header height*/
+  margin:-50px 0 0; /* negative fixed header height */
+}
+
+#contact-me::before {
+content:"";
+display:block;
+height:80px; /* fixed header height*/
+margin:-50px 0 0; /* negative fixed header height */
+}
 
 .githubBtn {
   background: red;
@@ -49,10 +62,10 @@
 
 #CV-btn {
   -webkit-appearance: none;
-  color: cyan;
+  color: #1757cd;
   font-size: 1.25rem;
   vertical-align: text-bottom;
-  font-weight: 300;
+  font-weight: 500;
 }
 
 .contact-form {
@@ -79,6 +92,13 @@
 }
 .footer {
   padding: 0 60px !important;
+  flex-direction: column;
+}
+.footer-container {
+  height: 100px !important;
+}
+.project-cards {
+  flex-direction: column;
 }
 }
 
