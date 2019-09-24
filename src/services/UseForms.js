@@ -20,7 +20,7 @@ const UseForm = (callback, validate) => {
 
     useEffect(() => {
         if (Object.keys(errors).length === 0 && isSubmitting) {
-            callback(setInputs);
+            callback(setInputs, isSubmitting);
         }
     }, [errors]);
 

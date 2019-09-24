@@ -40,18 +40,9 @@ const useStyles = makeStyles(theme => ({
 
 export default function ContactMe() {
     const classes = useStyles();
-    // const [values, setValues] = useState({
-    //     name: '',
-    //     email: '',
-    //     message: ''
-    // });
+    const [isEmailSent, setIsEmailSent] = useState(false)
 
-    // const handleChange = name => event => {
-    //     setValues({ ...values, [name]: event.target.value });
-    // };
-
-    const sendEmail = async (setInputs) => {
-        console.log('fireeeee', inputs)
+    const sendEmail = async (setInputs, isSubmitting) => {
         await fetch(`${API_KEY}/sendemail`, {
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -64,6 +55,7 @@ export default function ContactMe() {
             })
         })
         setInputs({})
+        setIsEmailSent(isSubmitting)
     }
 
     // const handleEmail = () => {
@@ -88,6 +80,11 @@ export default function ContactMe() {
             </div>
             <div>
                 <div className='container my-5 contact-form'>
+                    {isEmailSent &&
+                        <div class="alert alert-success" role="alert">
+                            Your email has been sent. Please give me some time to respond.
+                        </div>
+                    }
                     <div data-aos="zoom-in">
                         <form onSubmit={handleSubmit} className={classes.container} autoComplete="off">
                             {errors.name ? <TextField
