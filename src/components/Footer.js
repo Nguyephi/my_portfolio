@@ -34,7 +34,7 @@ export default function ButtonAppBar() {
                             <small>© 2019 Philip Nguyen</small>
                         </Typography>
                     </div>
-                    <div>
+                    <div className='text-center'>
                         <IconButton onClick={handleGithub} color="inherit">
                             <i className="fab fa-github"></i>
                         </IconButton>

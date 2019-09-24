@@ -15,7 +15,7 @@ export default function Header() {
             backgroundImage: `url(${headerFullBackground})`,
             backgroundSize: 'cover',
             width: '100%',
-            height: '36rem'
+            height: '40rem'
         }}>
             <div style={{ width: '100%', position: 'absolute', right: 15, top: 330 }}>
                 <div data-aos="fade-up-right">

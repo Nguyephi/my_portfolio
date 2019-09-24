@@ -73,7 +73,7 @@ export default function ContactMe() {
 
     return (
         <>
-            <div style={{ boxShadow: 'inset 0 0 17px 2px', height: 100, backgroundColor: '#0D0221', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <div style={{ boxShadow: 'inset 0 0 16px 0px white', height: 100, backgroundColor: '#0D0221', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <h2 style={{ color: 'white' }}>
                     CONTACT ME
                 </h2>

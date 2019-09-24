@@ -72,9 +72,11 @@ margin:-50px 0 0; /* negative fixed header height */
   padding: 0px 300px;
 }
 
-/* #header-background {
-  height: '36rem
-} */
+@media only screen and (max-width: 600px) {
+#philip {
+  display: none;
+}
+}
 
 @media only screen and (max-width: 768px) {
 .emptySpace{
@@ -88,14 +90,15 @@ margin:-50px 0 0; /* negative fixed header height */
   bottom: 100px;
 }
 #header-background {
-  height: 33rem !important;
+  height: 36rem !important;
 }
 .footer {
   padding: 0 60px !important;
   flex-direction: column;
 }
 .footer-container {
-  height: 100px !important;
+  padding-top: 5px;
+  height: 125px !important;
 }
 .project-cards {
   flex-direction: column;
@@ -105,6 +108,9 @@ margin:-50px 0 0; /* negative fixed header height */
 @media only screen and (max-width: 992px) {
 .contact-form {
   padding: 0px 20px !important;
+}
+#nav-divider {
+  display: none;
 }
 }
 
